@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.MinjingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.MinjingEntity" id="minjingMap">
+        <result property="jinghao" column="jinghao"/>
+        <result property="mima" column="mima"/>
+        <result property="jingchaxingming" column="jingchaxingming"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+        <result property="lianxishouji" column="lianxishouji"/>
+        <result property="xiangpian" column="xiangpian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.MinjingVO" >
+		SELECT * FROM minjing  minjing         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.MinjingVO" >
+		SELECT  minjing.* FROM minjing  minjing
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.MinjingView" >
+
+		SELECT  minjing.* FROM minjing  minjing 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.MinjingView" >
+		SELECT * FROM minjing  minjing <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
